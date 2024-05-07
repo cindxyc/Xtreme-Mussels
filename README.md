@@ -21,3 +21,5 @@ The program should allow users to look up different types of exercises based on 
   - Users can create a new routine and customize the routine name
   - The default routine is empty. Users can add/delete exercises once the routine is created
   - The routine can also be edited any time (change name, change sets and reps)
+ 
+<img width="794" alt="XtremeMussels" src="https://github.com/cindxyc/Xtreme-Mussels/assets/136262827/dd1d3f6a-58c5-42f6-b866-4e3fed86bcdc">
