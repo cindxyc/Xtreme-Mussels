@@ -14,6 +14,7 @@ import use_case.lookup_routine.LookUpRoutineDataAccessInterface;
 import use_case.adjust_setrep.AdjustSetRepDataAccessInterface;
 import use_case.rename_routine.RenameRoutineDataAccessInterface;
 import use_case.lookup_routines.LookUpRoutinesDataAccessInterface;
+import use_case.delete_routine.DeleteRoutineDataAccessInterface;
 
 import java.io.*;
 import java.util.*;
@@ -23,7 +24,7 @@ import java.util.*;
  * @version 1.1, 4 Dec 2023
  */
 public class RoutineDataAccessObject implements AddExerciseDataAccessInterface, AddRoutineDataAccessInterface, AdjustSetRepDataAccessInterface, DeleteExerciseDataAccessInterface,
-        GenerateRoutineDataAccessInterface, LookUpRoutineDataAccessInterface, LookUpRoutinesDataAccessInterface, RenameRoutineDataAccessInterface {
+        GenerateRoutineDataAccessInterface, LookUpRoutineDataAccessInterface, LookUpRoutinesDataAccessInterface, RenameRoutineDataAccessInterface, DeleteRoutineDataAccessInterface  {
     /**
      * Hashmap storing the routine name and its associated routine entity.
      */
@@ -231,6 +232,13 @@ public class RoutineDataAccessObject implements AddExerciseDataAccessInterface, 
     @Override
     public void addRoutine(Routine routine) {
         routineList.put(routine.getRoutineName(), routine);
+        this.save();
+    }
+
+    //For DeleteRoutineDataAccessInterface
+    @Override
+    public void deleteRoutine(String routineName){
+        routineList.remove(routineName);
         this.save();
     }
 
